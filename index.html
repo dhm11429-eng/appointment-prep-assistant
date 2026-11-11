@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointment Prep Assistant</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1>Appointment Prep Assistant Form</h1>
+
+    <!-- Disclaimer Section -->
+    <h2>Disclaimer</h2>
+    <p>
+      This tool allows you to prepare a formatted document of your concerns
+      before your doctor visit. This application does not provide medical
+      advice, diagnoses, or treatment recommendations. Any serious medical
+      concerns should be discussed with your healthcare professional.
+    </p>
+
+    <!-- Patient Form -->
+    <form id="patient-form">
+      <!-- Symptoms -->
+      <label for="current-symptoms">Symptoms</label>
+      <textarea
+        name="current-symptoms"
+        id="current-symptoms"
+        rows="4"
+        placeholder="Type your symptoms here..."
+        required
+      ></textarea>
+
+      <!-- Medication List -->
+      <div id="medication-list">
+        <div class="medication-entry">
+          <label for="medication-one">Medication 1</label>
+          <input
+            type="text"
+            name="medication"
+            id="medication-one"
+            placeholder="Type your medication name here..."
+          />
+        </div>
+      </div>
+
+      <!-- Medication Button -->
+      <button type="button" id="medication-button">Add Medication</button>
+
+      <!-- Patient Questions -->
+      <label for="patient-question">Patient Questions</label>
+      <textarea
+        name="patient-question"
+        id="patient-question"
+        rows="4"
+        placeholder="Type your questions here..."
+        required
+      ></textarea>
+
+      <!-- Additional Concerns -->
+      <label for="additional-concerns">Additional Concerns</label>
+      <textarea
+        name="additional-concerns"
+        id="additional-concerns"
+        rows="4"
+        placeholder="Type your additional concerns here..."
+      ></textarea>
+
+      <!-- Error Message -->
+      <p id="error-message" role="alert" aria-live="assertive"></p>
+
+      <!-- Generate Button -->
+      <button type="submit" id="generate-button">Generate</button>
+    </form>
+
+    <!-- Appointment Summary -->
+    <section id="summary" hidden aria-labelledby="summary-title">
+      <h2 id="summary-title" tabindex="-1">Patient Appointment Summary</h2>
+
+      <div id="content" aria-live="polite"></div>
+    </section>
+
+    <!-- Print Button -->
+    <button type="button" id="print-button" hidden>Print Summary</button>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+/* Body Styles */
+body {
+  background-color: #cadff5;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+}
+/* Button Styles */
+button {
+  background-color: #ecf6ed;
+  padding: 10px;
+}
+button:hover {
+  background-color: #d3e8d5;
+}
+/* Form Styles */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+input,
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  font: inherit;
+}
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #a14e00;
+  outline-offset: 3px;
+}
+/* Error Message Styles */
+#error-message {
+  color: #8b2525;
+  font-weight: bold;
+}
+/* Medication Styles */
+.medication-entry {
+  margin-bottom: 10px;
+}
+.remove-medication {
+  background-color: #8b2525;
+  color: white;
+}
+.remove-medication:hover {
+  background-color: #641919;
+  color: white;
+}
+/* Appointment Summary Styles */
+#summary {
+  background-color: white;
+  padding: 25px;
+}
+#summary h3 {
+  color: #173b5e;
+}
+#summary section {
+  border-bottom: 1px solid #cccccc;
+  border-radius: 0;
+}
+/* Hidden Styles */
+[hidden] {
+  display: none !important;
+}
+/* Print Summary Styling */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #summary,
+  #summary * {
+    visibility: visible;
+  }
+
+  #summary {
+    display: block !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    color: black;
+    padding: 20px;
+  }
+
+  #print-button,
+  #patient-form,
+  body > h1,
+  body > h2,
+  body > p {
+    display: none !important;
+  }
+
+  #summary h2,
+  #summary h3 {
+    color: black;
+  }
+
+  #summary section {
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    page-break-inside: avoid;
+  }
+}
+@media screen and (max-width: 600px) {
+  body {
+    padding: 12px;
+  }
+
+  #summary {
+    padding: 15px;
+  }
+}
